@@ -1,34 +1,55 @@
 import turtle
-
-def draw_triangle(turtle,length):
+import math
+def draw_triangle(turtle,length,fill):
     i=0
+    if (fill):
+        turtle.fill(True)
     while (i<3):
         turtle.forward(length)
         turtle.left(120)
         i=i+1
+    if (fill):
+        turtle.fill(False)
+def draw_fractal(turtle, iteration, size):
+    if (iteration>0):
+        draw_fractal(turtle,iteration-1,size/2)
+        turtle.left(60)
+        turtle.forward(size/2)
+        turtle.right(60)
+        draw_fractal(turtle,iteration-1,size/2)
+        turtle.right(120)
+        turtle.forward(size/2)
+        turtle.left(120)
+        turtle.forward(size/2)
+        draw_fractal(turtle,iteration-1,size/2)
+        turtle.right(180)
+        turtle.forward(size/2)
+        turtle.right(180)
+    else:
+        draw_triangle(turtle,size,True)
 
-def draw_shape(turtle, iterations):
-    i=0
-    size=1
-    while (i<iterations):
-        j=0
-        while (j<3):
-            draw_triangle(turtle)
-            j=j+1
-        i=i+1
-    
-def start_program():
+#levels: number of levels of recursivity
+#size: size of the greatest triangle
+
+def start_program(levels,size):
     window = turtle.Screen()
-    window.bgcolor("red")
+    window.bgcolor("white")
 
     brad = turtle.Turtle()
-    brad.shape("turtle")
-    brad.color("green")
-    brad.speed(3)
-
-    draw_triangle(brad,30)
+    brad.shape("classic")
+    brad.color("blue")
+    brad.fillcolor("green")
+    brad.speed(100)
+    
+    #center triangle on screen
+    brad.up()
+    brad.setx(-size/2)
+    brad.sety(-(size/2*math.sqrt(3))/2)
+    brad.down()
+    
+    draw_fractal(brad,levels,size)
 
     
     window.exitonclick()
     
-start_program()
+start_program(6,600)
