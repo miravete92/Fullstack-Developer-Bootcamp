@@ -33,7 +33,7 @@ def draw_fractal(turtle, iteration, size):
 
 def start_program(levels,size):
     window = turtle.Screen()
-    window.bgcolor("blue")
+    window.bgcolor("black")
 
     brad = turtle.Turtle()
     brad.shape("classic")
@@ -52,4 +52,4 @@ def start_program(levels,size):
     
     window.exitonclick()
     
-start_program(8,1000)
+start_program(7,1000)
