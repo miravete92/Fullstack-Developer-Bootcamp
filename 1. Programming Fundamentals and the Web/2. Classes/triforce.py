@@ -33,13 +33,13 @@ def draw_fractal(turtle, iteration, size):
 
 def start_program(levels,size):
     window = turtle.Screen()
-    window.bgcolor("white")
+    window.bgcolor("blue")
 
     brad = turtle.Turtle()
     brad.shape("classic")
-    brad.color("blue")
-    brad.fillcolor("green")
-    brad.speed(100)
+    brad.color("gold")
+    brad.fillcolor("yellow")
+    brad.speed(10000)
     
     #center triangle on screen
     brad.up()
