@@ -36,5 +36,7 @@ inception = media.Movie("Inception",
 #kill_bill.show_trailer()
 movies = [toy_story,avatar,kill_bill,interstellar,the_martian,inception]
 fresh_tomatoes.open_movies_page(movies)
-
+#print(media.Movie.__name__)
+#print(media.Movie.__module__)
+#print(media.Movie.__doc__)
 

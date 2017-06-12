@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+	color: #2d3c49;
+}
+
+body {
+	display: flex;
+	flex-flow: row wrap;
+	padding: 0;
+}
+
+aside {
+	width:100%;
+	vertical-align: top;
+	display: flex;
+	flex-flow: initial;
+}
+
+.color {
+	width: 33%;
+	text-align: center;
+	margin: 0;
+}
+.projects {
+	display: flex;
+	flex-flow: row wrap;
+}
+.project {
+	width: 100%;
+	text-align: center;
+	vertical-align: top;
+	margin-bottom: 30px;
+}
+.rightSide {
+	width:100%;
+}
+
+@media screen and (min-width: 700px){
+	body {
+		padding: 0 5%;
+		flex-flow: initial;
+	}
+
+	aside {
+		flex-flow: row wrap;
+		padding-top: 100px;
+		width:200px;
+	}
+
+	.color {
+		width: 100%;
+		margin-bottom: 50px;
+		text-align: center;
+	}
+	.projects {
+		flex-flow: initial;
+		justify-content: space-between;
+	}
+	.project {
+		width: 32%;
+	}
+
+	.clearPadLeft {
+		margin-left: 0;
+	}
+
+	.clearPadRight {
+		margin-right: 0;
+	}
+
+}
+
+.colorProbe {
+	width: 50px;
+	height: 50px;
+	margin: auto;
+}
+
+.pick1 {
+	background-color: #02b3e4;
+}
+
+.pick2 {
+	background-color: #2d3c49;
+}
+
+.pick3 {
+	background-color: #7d97ad;
+}
+
+
+header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.headerLogo {
+	left: 0;
+	top: 0;
+	width: 80px;
+	height: 80px;
+	background-color: red;
+	vertical-align: top;
+}
+
+.headerText {
+	text-transform: uppercase;
+}
+
+.titleText {
+	font-size: 40px;
+	text-align: right;
+	margin: 0;
+}
+
+.subtitleText {
+	font-size: 20px;
+	text-align: right;
+	margin: 0;
+}
+
+.mainImg {
+	width: 100%;
+	max-height: 400px;
+	overflow: hidden;
+}
+
+.projectImg {
+	width: 100%;
+}
+
+h3 {
+	color: #7d97ad;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 30px;
+	margin: 0;
+	word-wrap: normal;
+}
+
+a {
+	text-decoration: none;
+	font-size: 12px;
+}
+
