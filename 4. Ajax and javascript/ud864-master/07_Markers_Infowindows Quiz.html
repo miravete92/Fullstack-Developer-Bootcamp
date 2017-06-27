@@ -1,0 +1,253 @@
+<!-- This is the corresponding "starter code" for 07_Markers/Infowindows in Udacity and Google's Maps
+API Course, Lesson 1 -->
+<html>
+ <head>
+ <!-- styles put here, but you can include a CSS file and reference it instead! -->
+   <style type="text/css">
+     html, body { height: 100%; margin: 0; padding: 0; }
+     #map { height: 100%; }
+   </style>
+ </head>
+ <body>
+   <div id="map"></div>
+   <script type="text/javascript">
+     // Create a map variable
+     var map;
+	 var styles = [
+		{
+			"elementType": "labels",
+			"stylers": [
+				{
+					"visibility": "off"
+				},
+				{
+					"color": "#f49f53"
+				}
+			]
+		},
+		{
+			"featureType": "landscape",
+			"stylers": [
+				{
+					"color": "#f9ddc5"
+				},
+				{
+					"lightness": -7
+				}
+			]
+		},
+		{
+			"featureType": "road",
+			"stylers": [
+				{
+					"color": "#813033"
+				},
+				{
+					"lightness": 43
+				}
+			]
+		},
+		{
+			"featureType": "poi.business",
+			"stylers": [
+				{
+					"color": "#645c20"
+				},
+				{
+					"lightness": 38
+				}
+			]
+		},
+		{
+			"featureType": "water",
+			"stylers": [
+				{
+					"color": "#1994bf"
+				},
+				{
+					"saturation": -69
+				},
+				{
+					"gamma": 0.99
+				},
+				{
+					"lightness": 43
+				}
+			]
+		},
+		{
+			"featureType": "road.local",
+			"elementType": "geometry.fill",
+			"stylers": [
+				{
+					"color": "#f19f53"
+				},
+				{
+					"weight": 1.3
+				},
+				{
+					"visibility": "on"
+				},
+				{
+					"lightness": 16
+				}
+			]
+		},
+		{
+			"featureType": "poi.business"
+		},
+		{
+			"featureType": "poi.park",
+			"stylers": [
+				{
+					"color": "#645c20"
+				},
+				{
+					"lightness": 39
+				}
+			]
+		},
+		{
+			"featureType": "poi.school",
+			"stylers": [
+				{
+					"color": "#a95521"
+				},
+				{
+					"lightness": 35
+				}
+			]
+		},
+		{},
+		{
+			"featureType": "poi.medical",
+			"elementType": "geometry.fill",
+			"stylers": [
+				{
+					"color": "#813033"
+				},
+				{
+					"lightness": 38
+				},
+				{
+					"visibility": "off"
+				}
+			]
+		},
+		{},
+		{},
+		{},
+		{},
+		{},
+		{},
+		{},
+		{},
+		{},
+		{},
+		{},
+		{
+			"elementType": "labels"
+		},
+		{
+			"featureType": "poi.sports_complex",
+			"stylers": [
+				{
+					"color": "#9e5916"
+				},
+				{
+					"lightness": 32
+				}
+			]
+		},
+		{},
+		{
+			"featureType": "poi.government",
+			"stylers": [
+				{
+					"color": "#9e5916"
+				},
+				{
+					"lightness": 46
+				}
+			]
+		},
+		{
+			"featureType": "transit.station",
+			"stylers": [
+				{
+					"visibility": "off"
+				}
+			]
+		},
+		{
+			"featureType": "transit.line",
+			"stylers": [
+				{
+					"color": "#813033"
+				},
+				{
+					"lightness": 22
+				}
+			]
+		},
+		{
+			"featureType": "transit",
+			"stylers": [
+				{
+					"lightness": 38
+				}
+			]
+		},
+		{
+			"featureType": "road.local",
+			"elementType": "geometry.stroke",
+			"stylers": [
+				{
+					"color": "#f19f53"
+				},
+				{
+					"lightness": -10
+				}
+			]
+		},
+		{},
+		{},
+		{}
+	];
+     // Function to initialize the map within the map div
+     function initMap() {
+       map = new google.maps.Map(document.getElementById('map'), {
+         center: {lat: 40.74135, lng: -73.99802},
+		 styles: styles,
+         zoom: 14
+       });
+       // Create a single latLng literal object.
+       var singleLatLng = {lat: 40.74135, lng: -73.99802};
+	   var marker = new google.maps.Marker({
+		position: singleLatLng,
+		map: map,
+		title: 'Super Marker!!'
+	   });
+	   var infowindow = new google.maps.InfoWindow({
+		content: JSON.stringify(marker.position)
+	   });
+	   marker.addListener('click',function(){
+		infowindow.open(map, marker);
+	   });
+       // TODO: Create a single marker appearing on initialize -
+       // Create it with the position of the singleLatLng,
+       // on the map, and give it your own title!
+
+       // TODO: create a single infowindow, with your own content.
+       // It must appear on the marker
+
+       // TODO: create an EVENT LISTENER so that the infowindow opens when
+       // the marker is clicked!
+     }
+   </script>
+   <!--TODO: Insert your API Key in the below call to load the API.-->
+   <script async defer
+     src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAR2-xZYnT-_e-CPscJCiLEdiiORFLwsjo&callback=initMap">
+   </script>
+ </body>
+</html>
