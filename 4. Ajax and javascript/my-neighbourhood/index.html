@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>My Neighbourhood</title>
+</head>
+<body>
+    <aside data-bind="css: { shown: showSidebar() > 0 }">
+        <div>
+          <input id="search-within-time-text" type="text" placeholder="Ex: restaurant, haircut...">
+          <input id="search-within-time" type="button" value="Go">
+        </div>  
+    </aside>
+    <main>
+        <header>
+            <button id="showSidebar" data-bind="click: toogleSidebar"></button>
+            <h2>My Neighbourhood</h2>
+        </header>
+        <div id="map">   
+        </div>
+    </main>
+    
+	<!--
+    <ul data-bind="foreach: catList">
+        <li data-bind="text: name, click: $parent.setCurrentCat"></li>
+    </ul>
+    <div data-bind="with: currentCat">
+
+        <h2 data-bind="text: name"></h2>
+        <div data-bind="text: clickCount"></div>
+        <h3 data-bind="text: level"></h3>
+        <img src="" alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
+        <ul data-bind="foreach: nicknames">
+            <li data-bind="text: $data"></li>
+        </ul>
+
+    </div>-->
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/app.js"></script>
+	<script async defer 
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR2-xZYnT-_e-CPscJCiLEdiiORFLwsjo&v=3&callback=initMap">
+    </script>
+</body>
+</html>

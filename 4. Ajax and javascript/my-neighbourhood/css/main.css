@@ -1,0 +1,47 @@
+html, body { height: 100%; margin: 0; padding: 0; }
+
+aside{
+	overflow-y: scroll;
+	width: 0px;
+	height: 100%;
+	background-color: #444;
+	float:left;
+	transition: width 1s;
+}
+
+aside.shown {
+	width: 300px;
+}
+
+@media (min-width: 700px) {
+	aside {
+		width: 300px;
+	}
+	aside.shown {
+	width: 0px;
+}
+
+}
+main{
+	height: 100%;
+	vertical-align: top;
+	margin: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+header {
+	height: 60px;
+	background-color: #333;
+}
+header *{
+	display: inline-block;
+	height: 60px;
+	margin: 0;
+}
+header #showSidebar{
+	width: 60px;
+}
+#map { 
+	flex-grow: 1;
+}
