@@ -11,10 +11,12 @@
         <h3>Search locations</h3>
         <div id="search-box">
             <input id="search-text" type="text" placeholder="Ex: restaurant, haircut..." data-bind="value: query">
-            <input id="search-btn" type="button" value="Go" data-bind="click: findPlaces">  
+            <button id="search-btn" type="button" data-bind="click: findPlaces">
+                Filter<img src="img/filter.png" alt="">
+            </button>
         </div>
         <ul class="locationList" data-bind="foreach: placeList">
-                <li class="locationItem" data-bind="text: name"></li>
+                <li class="locationItem" data-bind="text: name, click: openInfo"></li>
         </ul>
     </aside>
     <main>
