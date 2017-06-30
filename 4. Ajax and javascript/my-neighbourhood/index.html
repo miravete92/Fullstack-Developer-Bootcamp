@@ -8,14 +8,20 @@
 </head>
 <body>
     <aside data-bind="css: { shown: showSidebar() > 0 }">
-        <div>
-          <input id="search-within-time-text" type="text" placeholder="Ex: restaurant, haircut...">
-          <input id="search-within-time" type="button" value="Go">
-        </div>  
+        <h3>Search locations</h3>
+        <div id="search-box">
+            <input id="search-text" type="text" placeholder="Ex: restaurant, haircut..." data-bind="value: query">
+            <input id="search-btn" type="button" value="Go" data-bind="click: findPlaces">  
+        </div>
+        <ul class="locationList" data-bind="foreach: placeList">
+                <li class="locationItem" data-bind="text: name"></li>
+        </ul>
     </aside>
     <main>
         <header>
-            <button id="showSidebar" data-bind="click: toogleSidebar"></button>
+            <div id="showSidebar" data-bind="click: toogleSidebar" >
+                <img src="img/menu-icon.png" alt="show menu"/>
+            </div>
             <h2>My Neighbourhood</h2>
         </header>
         <div id="map">   
@@ -37,6 +43,7 @@
         </ul>
 
     </div>-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
     <script src="js/lib/knockout-3.2.0.js"></script>
     <script src="js/app.js"></script>
 	<script async defer 

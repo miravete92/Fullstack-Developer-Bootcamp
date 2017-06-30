@@ -1,4 +1,6 @@
-html, body { height: 100%; margin: 0; padding: 0; }
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html, body { height: 100%; margin: 0; padding: 0; color: white; font-family: 'Roboto', sans-serif;}
 
 aside{
 	overflow-y: scroll;
@@ -7,8 +9,21 @@ aside{
 	background-color: #444;
 	float:left;
 	transition: width 1s;
+	padding: 5px;
+}
+aside #search-box{
+	margin-top: 20px;
+	display: flex;
 }
 
+aside #search-text{
+	width: 220px;
+	font-size: 25px;
+}
+aside #search-btn{
+	flex-grow: 1;
+	font-size: 25px;
+}
 aside.shown {
 	width: 300px;
 }
@@ -33,15 +48,36 @@ main{
 header {
 	height: 60px;
 	background-color: #333;
+	vertical-align: center;
 }
 header *{
 	display: inline-block;
 	height: 60px;
 	margin: 0;
+	vertical-align: top;
+}
+header h2{
+	font-size: 30px;
+	line-height: 30px;
+	padding: 15px;
 }
 header #showSidebar{
 	width: 60px;
 }
+header #showSidebar img{
+	width: 30px;
+	height: 30px;
+	padding: 15px;
+}
 #map { 
 	flex-grow: 1;
+}
+.locationList{
+	list-style: none;
+	padding: 0;
+}
+.locationItem{
+	padding: 10px;
+	border: 1px #333 solid;
+	margin:0;
 }
